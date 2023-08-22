@@ -13,4 +13,10 @@ class MoviesController extends Controller
 
         return view('movies.index', compact('movies'));
     }
+
+
+    public function show(Movie $movie)
+    {
+        return view('movies.show', compact('movie'));
+    }
 }
