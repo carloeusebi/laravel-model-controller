@@ -3,11 +3,9 @@
 
 @section('main-content')
     <div class="container">
-        <h1 class="text-center my-5">Our movies list</h1>
-        <ul>
-            @foreach ($movies as $movie)
-                <li>{{ $movie['title'] }}</li>
-            @endforeach
-        </ul>
+        <div class="text-center mt-5">
+            <h1 class="mb-5">Almost there! Click on the link below</h1>
+            <a href="{{ route('movies.index') }}">Go to movies</a>
+        </div>
     </div>
 @endsection

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MoviesController;
 use App\Http\Controllers\SiteController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,3 +16,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [SiteController::class, 'index'])->name('homepage');
+
+Route::prefix('movies/')
+    ->controller(MoviesController::class, 'index')
+    ->name('movies.')
+    ->group(
+        function () {
+            Route::get('/', 'index')->name('index');
+            Route::get('/{movie}', 'show')->name('show');
+        }
+    );
